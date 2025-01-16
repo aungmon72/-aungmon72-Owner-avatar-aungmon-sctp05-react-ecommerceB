@@ -31,16 +31,20 @@ function Navbar() {
         <div className={`collapse navbar-collapse ${isNavbarShowing ? "show" : ""}`} id="navbarNav">
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">Home</a>
+              <a className="nav-link active" aria-current="page" href="/">Home</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">Products</a>
+              <a className="nav-link" href="/products">Products</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">About</a>
+              <a className="nav-link" href="/register">Register</a>
+            </li>
+            
+            <li className="nav-item">
+              <a className="nav-link" href="/about">About</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">Contact</a>
+              <a className="nav-link" href="/contact">Contact</a>
             </li>
           </ul>
         </div>
