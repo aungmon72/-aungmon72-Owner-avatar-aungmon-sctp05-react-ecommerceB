@@ -1,7 +1,41 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import ProductCard from './ProductCard';
 
 function HomePage() {
+
+  const [featuredProducts, setFeaturedProducts] = useState([]);
+
+  useEffect(() => {
+    const fetchFeaturedProducts = async () => {
+      try {
+        const response = await axios.get('/featured.json');
+        setFeaturedProducts(response.data);
+      } catch (error) {
+        console.error('Error fetching featured products:', error);
+      }
+    };
+
+    fetchFeaturedProducts();
+  }, []);
+
+  const renderFeaturedProducts = () => {
+    const productElements = [];
+    for (const product of featuredProducts) {
+      productElements.push(
+        <div key={product.id} className="col-md-3 mb-4">
+          <ProductCard
+            id={product.id}
+            imageUrl={product.image}
+            productName={product.name}
+            price={product.price.toFixed(2)}
+          />
+        </div>
+      );
+    }
+    return productElements;
+  };
+  
   return (
     <>
       <header className="bg-primary text-white text-center py-5">

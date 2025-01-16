@@ -25,7 +25,7 @@ function Navbar() {
           className="navbar-toggler"
           type="button"
           onClick={toggleNavbar}
-        >
+        > Navbar-toggler
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className={`collapse navbar-collapse ${isNavbarShowing ? "show" : ""}`} id="navbarNav">

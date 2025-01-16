@@ -1,0 +1,26 @@
+[
+    {
+      "id": 1,
+      "name": "Sleek Smartwatch",
+      "price": 199.99,
+      "image": "https://picsum.photos/id/20/300/200"
+    },
+    {
+      "id": 2,
+      "name": "Wireless Earbuds",
+      "price": 79.99,
+      "image": "https://picsum.photos/id/1/300/200"
+    },
+    {
+      "id": 3,
+      "name": "Portable Power Bank",
+      "price": 49.99,
+      "image": "https://picsum.photos/id/26/300/200"
+    },
+    {
+      "id": 4,
+      "name": "HD Action Camera",
+      "price": 129.99,
+      "image": "https://picsum.photos/id/96/300/200"
+    }
+  ]

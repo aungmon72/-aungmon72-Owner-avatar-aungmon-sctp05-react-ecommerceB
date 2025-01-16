@@ -7,6 +7,7 @@ import ProductPage from './HomePage'
 import RegisterPage from './RegisterPage'
 import AboutPage from './AboutPage'
 import ContactPage from './ContactPage'
+import axios from 'axios';
 
 import { Route, Switch } from 'wouter';
 //  import './styles.css';
