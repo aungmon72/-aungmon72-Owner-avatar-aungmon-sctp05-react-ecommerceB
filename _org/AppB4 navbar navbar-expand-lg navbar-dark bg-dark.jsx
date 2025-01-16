@@ -1,8 +1,8 @@
 
 import React, {useState} from 'react';
-import ProductCard from './ProductCard';
+import ProductCard from '../src/ProductCard';
 
-//  import './styles.css';
+import './styles.css';
 
 function App() {
 
@@ -11,43 +11,38 @@ function App() {
   // Toggle the collapse state
   const toggleNavbar = () => {
     setNavbarShowing(!isNavbarShowing);
-    alert("NavbarToggle!")
   };
 
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-          <div className="container">
-            <a className="navbar-brand" href="#">E-Shop</a>
-
-            <button onClick = { alert("After EShop Clicked!") } >After EShop</button>
-            
-            <button
+        <div className="container">
+          <a className="navbar-brand" href="#">E-Shop</a>
+          <button
               className="navbar-toggler"
               type="button"
               onClick={toggleNavbar}
-            > Toggle Navbar
-            </button>
-            <span className="navbar-toggler-icon"></span>
+          > Toggle
+              <span className="navbar-toggler-icon">Toggle</span>
+          </button>
 
-            <div className={`collapse navbar-collapse ${isNavbarShowing ? "show" : ""}`} 
-              id="navbarNav">
-              <ul className="navbar-nav ms-auto">
-                <li className="nav-item">
-                  <a className="nav-link active" aria-current="page" href="#">Home</a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="#">Products</a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="#">About</a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="#">Contact</a>
-                </li>
-              </ul>
-            </div>
+          <div className={`collapse navbar-collapse ${isNavbarShowing ? "show" : ""}`} id="navbarNav">
+            <ul className="navbar-nav ms-auto">
+              <li className="nav-item">
+                <a className="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#">Products</a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#">About</a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#">Contact</a>
+              </li>
+            </ul>
           </div>
+        </div>
       </nav>
 
       <header className="bg-primary text-white text-center py-5">
