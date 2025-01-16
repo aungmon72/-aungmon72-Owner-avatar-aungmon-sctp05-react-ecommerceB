@@ -8,7 +8,6 @@ import RegisterPage from './RegisterPage'
 import AboutPage from './AboutPage'
 import ContactPage from './ContactPage'
 
-
 import { Route, Switch } from 'wouter';
 //  import './styles.css';
 
