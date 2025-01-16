@@ -16,6 +16,20 @@ import { Route, Switch } from 'wouter';
 
 function App() {
 
+  const { getMessage, clearMessage  } = useFlashMessage();
+  const flashMessage = getMessage();
+
+  useEffect(() => {
+
+    const timer = setTimeout(() => {
+      clearMessage();
+    }
+    , 3000);
+    return () => {
+      clearTimeout(timer);
+    };
+  }
+  , [useFlashMessage]);
  
 
   return (
@@ -24,6 +38,10 @@ function App() {
       Above Navbar
       <Navbar/>
       Between Navbar and Switch
+      useFlashMessage        <div className={`alert alert-${useFlashMessage.type} text-center flash-alert`} role="alert">
+          {useFlashMessage.message}
+        </div>
+      )}
 
       <Switch>
         Inside Switch
