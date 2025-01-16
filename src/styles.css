@@ -2,3 +2,13 @@
     height: 200px;
     object-fit: cover;
 }
+
+.flash-alert {
+    animation: fadeOut 2s ease forwards;
+}
+  
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    70% { opacity: 1; } /* Stay fully visible for the first 70% of time */
+    100% { opacity: 0; }
+}
