@@ -37,6 +37,7 @@ function RegisterPage() {
       const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/register`, values);
       console.log('Registration successful:', response.data);
       setLocation("/");
+      showMessage('Registration successful!', 'success');
 
     } catch (error) {
       console.error('Registration failed:', error.response?.data || error.message);
