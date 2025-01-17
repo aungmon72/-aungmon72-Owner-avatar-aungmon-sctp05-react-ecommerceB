@@ -46,6 +46,13 @@ function Navbar() {
             <li className="nav-item">
               <a className="nav-link" href="/contact">Contact</a>
             </li>
+
+            <li className="nav-item">
+              <Link href="/cart" className={`nav-link ${location === '/cart' ? 'active' : ''}`}>
+                Cart
+              </Link>
+            </li>
+            
           </ul>
         </div>
       </div>
