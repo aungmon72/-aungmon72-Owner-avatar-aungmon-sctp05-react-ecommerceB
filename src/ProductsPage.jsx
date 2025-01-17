@@ -5,6 +5,22 @@ import ProductCard from './ProductCard';
 function ProductsPage() {
   const [products, setProducts] = useState([]);
 
+  const { addToCart} = useCart();
+  const [, setLocation] = useLocation();
+  const { showMessage} = useFlashMessage();
+
+  const handleAddToCart = (product) => {
+      addToCart({
+          product_id: product.id,
+          productName: product.name,
+          imageUrl: product.image,
+          price: product.price,
+          description: product.description
+      });
+      showMessage("Product added to cart", "success");
+      setLocation("/cart");
+  }
+
   useEffect(() => {
     const fetchProducts = async () => {
       try {
@@ -28,6 +44,9 @@ function ProductsPage() {
               imageUrl={product.image}
               productName={product.name}
               price={product.price.toFixed(2)}
+              onAddToCart={()=>{
+                handleAddToCart(product)
+              }}
             />
           </div>
         ))}

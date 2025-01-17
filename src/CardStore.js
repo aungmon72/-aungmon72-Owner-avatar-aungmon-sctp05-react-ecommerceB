@@ -1,4 +1,5 @@
 import { atom, useAtom } from 'jotai';
+import Immutable from 'seamless-immutable';
 
 // Define the initial state of the cart. We put in one piece of test data
 const initialCart = [
@@ -46,8 +47,27 @@ export const useCart = () => {
     })
   }
 
+  const modifyQuantity = (product_id, quantity) => {
+    setCart((currentCart) => {
+      const existingItemIndex = currentCart.findIndex(item => item.product_id === product_id);
+      if (existingItemIndex !== -1) {
+
+        // check if the quantity will be reduced to 0 or less, if so remove the item
+        if (quantity < 0) {
+          return currentCart.filter(item => item.product_id !== product_id);
+        } else {                      
+            return currentCart.setIn([existingItemIndex, 'quantity'], quantity);
+        }
+
+      }
+    });
+  }
+
   return {
     cart,
     getCartTotal,
+    addToCart,
+    modifyQuantity,
+    removeFromCart
   };
 };
