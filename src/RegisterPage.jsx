@@ -27,24 +27,6 @@ function RegisterPage() {
     country: ''
   };
 
-  const handleSubmit2 = (values, formikHelpers) => {
-    // Here you would typically make an API call to register the user
-    console.log('Form values:', values);
-    formikHelpers.setSubmitting(false);
-  };
-
-  const handleSubmit3 = async (values, formikHelpers) => {
-    try {
-      const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/register`, values);
-      console.log('Registration successful:', response.data);
-      // Handle successful registration (e.g., show success message, redirect)
-    } catch (error) {
-      console.error('Registration failed:', error.response?.data || error.message);
-      // Handle registration error (e.g., show error message)
-    } finally {
-      formikHelpers.setSubmitting(false);
-    }
-  };  //  const handleSubmit = async (values, formikHelpers) => {
 
   const [, setLocation] = useLocation();
   const [showSuccess, setShowSuccess] = useState(false);

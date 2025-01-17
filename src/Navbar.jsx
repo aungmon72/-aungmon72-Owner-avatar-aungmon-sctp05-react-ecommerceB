@@ -1,8 +1,16 @@
 import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'wouter';
 
 function Navbar() {
   const [isNavbarShowing, setNavbarShowing] = useState(false);
 
+  // returns the current URL
+  const [location] = useLocation();
+
+  let toggleNavbar = () => {
+    setNavbarShowing(!isNavbarShowing);
+  };
+  
   useEffect(() => {
     const syncNavbarState = () => {
       setNavbarShowing(window.innerWidth >= 992);
@@ -13,7 +21,7 @@ function Navbar() {
     return () => window.removeEventListener('resize', syncNavbarState);
   }, []);
 
-  const toggleNavbar = () => {
+   toggleNavbar = () => {
     setNavbarShowing(!isNavbarShowing);
   };
 

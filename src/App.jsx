@@ -7,7 +7,7 @@ import ProductPage from './HomePage'
 import RegisterPage from './RegisterPage'
 import AboutPage from './AboutPage'
 import ContactPage from './ContactPage'
-import { useFlashMessage } from './FlashMessageStore';
+import { useFlashMessage } from './FlashMessageStore.js';
 
 import axios from 'axios';
 
@@ -29,17 +29,18 @@ function App() {
       clearTimeout(timer);
     };
   }
-  , [useFlashMessage]);
+  , [flashMessage]);
  
 
   return (
 
     <>
-      Above Navbar
       <Navbar/>
-      Between Navbar and Switch
-      useFlashMessage        <div className={`alert alert-${useFlashMessage.type} text-center flash-alert`} role="alert">
-          {useFlashMessage.message}
+
+
+      {flashMessage.message && (
+        <div className={`alert alert-${flashMessage.type} text-center flash-alert`} role="alert">
+          {flashMessage.message}
         </div>
       )}
 
@@ -53,14 +54,14 @@ function App() {
         
       </Switch>
 
-      Before Footer
+
       <footer className="bg-dark text-white text-center py-3">
         <div className="container">
           <p>&copy; 2023 E-Shop. All rights reserved.</p>
         </div>
 
       </footer>
-      After Footer
+
       <p></p>
         <button>  Footer </button>
     </>
