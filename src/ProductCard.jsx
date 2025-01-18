@@ -22,8 +22,17 @@ const ProductCard = (props) => {
                   props.onAddToCart();
                 }}
         >
-          Add to Car
+          Add to Cart
         </button>
+      </div>
+      <div className="card-body">
+        <h5 className="card-title">{props.productName}</h5>
+        <p className="card-text">${props.price}</p>
+        <a href="#" className="btn btn-primary" onClick={() => {
+          console.log("added to cart");
+          props.onAddToCart();
+        }}>Add to Cart
+        </a>
       </div>
     </div>
   );
